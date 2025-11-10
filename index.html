@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>A5MASI • Voice Commerce</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-orbit"></div>
+
+  <header class="site-header">
+    <div class="logo-mark">A5</div>
+    <div class="logo-text">
+      <div class="logo-title">A5MASI</div>
+      <div class="logo-sub">Voice-driven ecommerce</div>
+    </div>
+    <nav class="header-nav">
+      <button class="ghost-btn" type="button">Comment ça marche ?</button>
+    </nav>
+  </header>
+
+  <main class="page">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Une nouvelle façon de commander<br />
+          en ligne, guidé par la voix.
+        </h1>
+        <p class="hero-subtitle">
+          A5MASI accompagne ton client étape par étape avec une assistante audio.
+          Tu choisis le produit, tu écoutes, tu remplis, et c’est tout.
+        </p>
+        <div class="hero-actions">
+          <button class="primary-btn" type="button" id="ctaViewProducts">
+            Voir les offres du jour
+          </button>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="hero-chip">Prototype • Frontend statique</div>
+        <div class="hero-widget">
+          <div class="hero-widget-title">Assistant vocal A5MASI</div>
+          <p class="hero-widget-text">
+            Interface pensée pour être connectée plus tard à des audios par
+            produit, un backend et des analytics.
+          </p>
+          <div class="hero-wave">
+            <span></span><span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT GRID -->
+    <section class="products-section" id="productsSection">
+      <header class="products-header">
+        <h2>Choisis un pack pour tester le flux vocal</h2>
+        <p>
+          Chaque carte représente un produit. En cliquant, tu ouvres un
+          assistant qui te guidera jusqu’au formulaire de commande.
+        </p>
+      </header>
+
+      <div class="products-grid">
+        <article class="product-card" data-product-id="skin">
+          <div class="product-tag">Le plus demandé</div>
+          <h3 class="product-title">Pack Skin Glow</h3>
+          <p class="product-text">
+            Routine soin visage simple pour améliorer l’éclat de la peau à la
+            maison.
+          </p>
+          <div class="product-meta">
+            <span>199 DH</span>
+            <span class="meta-pill">3 étapes audio</span>
+          </div>
+          <button class="secondary-btn product-open-btn" type="button">
+            Lancer l’assistante
+          </button>
+        </article>
+
+        <article class="product-card" data-product-id="weight">
+          <div class="product-tag">Nouveau</div>
+          <h3 class="product-title">Pack Perte de Poids</h3>
+          <p class="product-text">
+            Programme simple avec conseils alimentaires et suivi basique à
+            distance.
+          </p>
+          <div class="product-meta">
+            <span>249 DH</span>
+            <span class="meta-pill">4 étapes audio</span>
+          </div>
+          <button class="secondary-btn product-open-btn" type="button">
+            Lancer l’assistante
+          </button>
+        </article>
+
+        <article class="product-card" data-product-id="focus">
+          <div class="product-tag">Productivité</div>
+          <h3 class="product-title">Pack Focus & Énergie</h3>
+          <p class="product-text">
+            Habitudes et produits pour rester concentré plus longtemps sans
+            surcharge.
+          </p>
+          <div class="product-meta">
+            <span>189 DH</span>
+            <span class="meta-pill">3 étapes audio</span>
+          </div>
+          <button class="secondary-btn product-open-btn" type="button">
+            Lancer l’assistante
+          </button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ASSISTANT OVERLAY (FORM + STEPS) -->
+  <div class="assistant-backdrop" id="assistantBackdrop" hidden></div>
+
+  <aside class="assistant-overlay" id="assistantOverlay" aria-hidden="true">
+    <div class="assistant-shell">
+      <header class="assistant-header">
+        <div>
+          <div class="assistant-label">Assistant A5MASI</div>
+          <div class="assistant-product" id="assistantProductTitle">
+            Produit sélectionné
+          </div>
+        </div>
+        <button class="icon-btn" type="button" id="assistantCloseBtn" aria-label="Fermer">
+          ✕
+        </button>
+      </header>
+
+      <div class="assistant-body">
+        <!-- STEP INDICATOR -->
+        <div class="steps-indicator">
+          <div class="step-dot" data-step="0"></div>
+          <div class="step-dot" data-step="1"></div>
+          <div class="step-dot" data-step="2"></div>
+          <div class="step-dot" data-step="3"></div>
+        </div>
+
+        <!-- AUDIO PANEL (placeholder for now) -->
+        <div class="audio-panel">
+          <div class="audio-info">
+            <div class="audio-title" id="audioTitle">Introduction</div>
+            <div class="audio-subtitle" id="audioSubtitle">
+              Plus tard: cette zone sera liée à un fichier audio pour ce
+              produit et cette étape.
+            </div>
+          </div>
+          <button class="circle-btn" type="button" id="audioToggleBtn">
+            ▶
+          </button>
+        </div>
+
+        <!-- FORMS STEPS CONTAINER -->
+        <div class="form-steps" id="formSteps">
+          <!-- Step 0 -->
+          <div class="form-step" data-step-index="0">
+            <h3>Commençons par ton nom</h3>
+            <p class="step-hint">
+              On a besoin de ton nom complet pour la livraison et le suivi.
+            </p>
+            <label class="field-block">
+              <span>Nom complet</span>
+              <input id="fieldName" type="text" placeholder="Ex: Sara El Fassi" />
+            </label>
+          </div>
+
+          <!-- Step 1 -->
+          <div class="form-step" data-step-index="1">
+            <h3>Ton numéro de téléphone</h3>
+            <p class="step-hint">
+              Utilisé pour la confirmation WhatsApp et l’appel du livreur.
+            </p>
+            <label class="field-block">
+              <span>Téléphone</span>
+              <input id="fieldPhone" type="tel" placeholder="06 xx xx xx xx" />
+            </label>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="form-step" data-step-index="2">
+            <h3>Ville et adresse</h3>
+            <p class="step-hint">
+              Indique ta ville et une adresse simple pour que le livreur te
+              trouve facilement.
+            </p>
+            <label class="field-block">
+              <span>Ville</span>
+              <input id="fieldCity" type="text" placeholder="Ex: Casablanca" />
+            </label>
+            <label class="field-block">
+              <span>Adresse</span>
+              <input
+                id="fieldAddress"
+                type="text"
+                placeholder="Rue, quartier, repère…"
+              />
+            </label>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="form-step" data-step-index="3">
+            <h3>Une petite note (optionnel)</h3>
+            <p class="step-hint">
+              Tu peux préciser un détail: préférence d’horaire, objectif, etc.
+            </p>
+            <label class="field-block">
+              <span>Note pour l’assistant</span>
+              <textarea
+                id="fieldNote"
+                rows="3"
+                placeholder="Ex: je travaille de 9h à 17h, appelez-moi après."
+              ></textarea>
+            </label>
+            <div class="summary-preview">
+              <h4>Récapitulatif rapide</h4>
+              <p id="summaryPreview">
+                Le récapitulatif sera affiché ici avant l’envoi de ta commande.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER CONTROLS -->
+      <footer class="assistant-footer">
+        <div class="assistant-status" id="assistantStatus"></div>
+        <div class="assistant-actions">
+          <button class="ghost-btn" type="button" id="prevStepBtn">
+            Retour
+          </button>
+          <button class="primary-btn" type="button" id="nextStepBtn">
+            Suivant
+          </button>
+        </div>
+      </footer>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>

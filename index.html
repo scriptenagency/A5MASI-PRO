@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>شات المتجر — طلب الدفع عند الاستلام</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script defer src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <iframe name="hidden_iframe" title="hidden_submit" class="is-hidden"></iframe>
+
+  <div class="trust-bar">
+    <span class="item"><span class="dot"></span> الدفع عند التسليم</span>
+    <span class="item">توصيل 24-72 س</span>
+    <span class="item">7 أيام ترجع المنتج بلا صداع</span>
+    <span class="item">واتساب: <a href="https://wa.me/212612345678" target="_blank" rel="noopener">0612345678</a></span>
+  </div>
+
+  <div class="app-shell">
+    <header class="app-header" id="appHeader">
+      <div class="header-main">
+        <div class="header-left">
+          <button class="icon-btn" id="cartButton" aria-label="السلة">
+            <i data-lucide="shopping-cart"></i>
+            <span class="cart-count" id="cartCount">0</span>
+          </button>
+          <a class="logo" href="#">المتجر</a>
+        </div>
+        <div class="header-right">
+          <button class="icon-btn" id="themeToggle" aria-label="تبديل النمط">
+            <i data-lucide="moon"></i>
+          </button>
+          <button class="icon-btn" id="searchToggle" aria-label="بحث">
+            <i data-lucide="search"></i>
+          </button>
+        </div>
+      </div>
+      <div class="header-search" id="searchBar">
+        <input type="search" id="searchInput" placeholder="قلب على المنتج اللي بغيتي...">
+        <button class="icon-btn" id="closeSearch" aria-label="إغلاق البحث">
+          <i data-lucide="x"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="chat-area" id="chatLog" aria-live="polite"></main>
+
+    <footer class="chat-controls">
+      <button class="icon-btn send-btn" id="sendButton" aria-label="إرسال" disabled>
+        <i data-lucide="send"></i>
+      </button>
+      <input type="text" id="chatInput" placeholder="كتب لينا سؤالك هنا..." autocomplete="off">
+    </footer>
+
+    <div class="policy-links">
+      <a href="#" data-policy="privacy">سياسة الخصوصية</a>
+      <span>•</span>
+      <a href="#" data-policy="returns">سياسة الإرجاع</a>
+      <span>•</span>
+      <a href="#" data-policy="contact">تواصل معانا</a>
+    </div>
+  </div>
+
+  <dialog class="policy-dialog" id="policyDialog" aria-modal="true">
+    <div class="policy-dialog__content">
+      <h3 id="policyTitle"></h3>
+      <div id="policyBody"></div>
+      <button class="btn" id="closePolicy">فهمت</button>
+    </div>
+  </dialog>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

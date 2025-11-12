@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <title>المتجر الذكي — الدفع عند الاستلام</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script defer src="https://unpkg.com/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="top-bar" id="topBar">
+    <div class="container flex-between">
+      <div class="top-bar__item"><span class="dot"></span> الدفع عند الاستلام</div>
+      <div class="top-bar__item">توصيل سريع 24-72 ساعة</div>
+      <div class="top-bar__item">استرجاع خلال 7 أيام</div>
+      <div class="top-bar__item">دعم واتساب: <a href="https://wa.me/212612345678" target="_blank" rel="noopener">0612345678</a></div>
+    </div>
+  </header>
+
+  <header class="site-header" id="siteHeader">
+    <div class="container flex-between">
+      <div class="logo-group">
+        <button class="icon-btn" id="menuToggle" aria-label="فتح القائمة">
+          <i data-lucide="menu"></i>
+        </button>
+        <a class="logo" href="#home">المتجر الذكي</a>
+      </div>
+      <nav class="main-nav" id="mainNav" aria-label="روابط أساسية">
+        <a href="#products">منتجات</a>
+        <a href="#how">كيف نعمل</a>
+        <a href="#delivery">التوصيل</a>
+        <a href="#testimonials">آراء العملاء</a>
+        <a href="#faq">الأسئلة الشائعة</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="تبديل النمط">
+          <i data-lucide="moon-star"></i>
+        </button>
+        <button class="cart-btn" id="cartToggle" aria-label="فتح الطلب">
+          <i data-lucide="shopping-bag"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero__grid">
+        <div class="hero__content">
+          <span class="badge">منصة مغربية موثوقة</span>
+          <h1>أسرع طريقة لطلب منتجاتك المفضلة مع <span>الدفع عند الاستلام</span>.</h1>
+          <p>اختر منتجك، أكد الطلب، واستمتع بتوصيل سريع في جميع مدن المغرب مع خدمة عملاء متخصصة تتابع طلبك خطوة بخطوة.</p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#products">اكتشف المنتجات</a>
+            <button class="btn btn--ghost" id="openWizard">ابدأ طلباً فورياً</button>
+          </div>
+          <div class="hero__stats">
+            <div>
+              <strong>+8k</strong>
+              <span>طلب مكتمل</span>
+            </div>
+            <div>
+              <strong>+4.9/5</strong>
+              <span>رضى العملاء</span>
+            </div>
+            <div>
+              <strong>24/7</strong>
+              <span>دعم مباشر</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero__preview">
+          <div class="preview-card">
+            <div class="preview-card__header">
+              <img src="https://placehold.co/80x80/0d9488/ffffff?text=COD" alt="الدفع عند الاستلام">
+              <div>
+                <h3>نظام تتبع ذكي</h3>
+                <p>التواصل مع العميل عبر واتساب والهاتف مباشرة بعد الطلب.</p>
+              </div>
+            </div>
+            <ul class="preview-card__list">
+              <li><i data-lucide="check-circle"></i> تأكيد عبر مكالمة أو رسالة</li>
+              <li><i data-lucide="map-pin"></i> تتبع التوصيل لحظة بلحظة</li>
+              <li><i data-lucide="shield"></i> استرجاع مجاني خلال 7 أيام</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust" id="trust">
+      <div class="container trust__grid">
+        <article>
+          <i data-lucide="shield-check"></i>
+          <h3>ثقة وشفافية</h3>
+          <p>كل الطلبات يتم تأكيدها يدوياً للتأكد من صحة البيانات وضمان تجربة مريحة.</p>
+        </article>
+        <article>
+          <i data-lucide="truck"></i>
+          <h3>توصيل سريع</h3>
+          <p>كازا والرباط في أقل من 24 ساعة، وباقي المدن خلال 48-72 ساعة مع إشعارات مستمرة.</p>
+        </article>
+        <article>
+          <i data-lucide="credit-card"></i>
+          <h3>دفع عند الاستلام</h3>
+          <p>لا حاجة لبطاقة بنكية. ادفع فقط عند استلامك المنتج والتأكد من جودته.</p>
+        </article>
+        <article>
+          <i data-lucide="repeat"></i>
+          <h3>إرجاع مبسط</h3>
+          <p>يمكنك استبدال أو استرجاع المنتج خلال 7 أيام بسهولة تامة.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="products" id="products">
+      <div class="container">
+        <div class="section-heading">
+          <h2>منتجات مختارة بعناية</h2>
+          <p>كل منتج مرفوق بضمان الجودة، صور حقيقية، ووصف واضح ليستمر ثقتك فينا.</p>
+        </div>
+        <div class="filters" role="tablist" aria-label="تصنيفات المنتجات">
+          <button class="filter-btn is-active" data-filter="all" role="tab">الكل</button>
+          <button class="filter-btn" data-filter="beauty" role="tab">جمال وعناية</button>
+          <button class="filter-btn" data-filter="home" role="tab">منزل ومطبخ</button>
+          <button class="filter-btn" data-filter="accessories" role="tab">إكسسوارات</button>
+        </div>
+        <div class="products__grid" id="productGrid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="how" id="how">
+      <div class="container">
+        <div class="section-heading">
+          <h2>خطوات بسيطة لإكمال طلبك</h2>
+          <p>نرافقك من اختيار المنتج إلى غاية التسليم عند باب بيتك.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline__item">
+            <span class="timeline__step">1</span>
+            <div>
+              <h3>اختر المنتج</h3>
+              <p>تصفح المنتجات وحدد الكمية والمواصفات المناسبة لك.</p>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <span class="timeline__step">2</span>
+            <div>
+              <h3>أدخل بياناتك</h3>
+              <p>الاسم، رقم الهاتف، والمدينة. بياناتك تبقى سرية بالكامل.</p>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <span class="timeline__step">3</span>
+            <div>
+              <h3>تأكيد الطلب</h3>
+              <p>فريقنا يتصل بك للتأكد من التفاصيل وإخبارك بوقت التوصيل.</p>
+            </div>
+          </div>
+          <div class="timeline__item">
+            <span class="timeline__step">4</span>
+            <div>
+              <h3>الدفع عند الاستلام</h3>
+              <p>ادفع فقط عند استلامك للمنتج وتجربته أمام الموزع.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="delivery" id="delivery">
+      <div class="container delivery__grid">
+        <div>
+          <div class="section-heading">
+            <h2>تغطية وطنية ذكية</h2>
+            <p>نغطي أكثر من 40 مدينة مغربية مع تتبع دقيق ورسائل SMS آلية.</p>
+          </div>
+          <ul class="delivery__list">
+            <li><i data-lucide="navigation"></i> كازا، الرباط، سلا، تمارة — <strong>24 ساعة</strong></li>
+            <li><i data-lucide="clock"></i> مراكش، طنجة، فاس، مكناس — <strong>48 ساعة</strong></li>
+            <li><i data-lucide="flag"></i> باقي المدن — <strong>72 ساعة</strong></li>
+          </ul>
+          <div class="delivery__calculator">
+            <label for="citySelect">احسب تكلفة التوصيل حسب مدينتك</label>
+            <div class="select-wrapper">
+              <select id="citySelect">
+                <option value="">اختر المدينة</option>
+                <option value="casa">الدار البيضاء</option>
+                <option value="rb">الرباط</option>
+                <option value="marrakech">مراكش</option>
+                <option value="tanger">طنجة</option>
+                <option value="other">مدينة أخرى</option>
+              </select>
+              <i data-lucide="chevron-down"></i>
+            </div>
+            <p id="deliveryResult">التوصيل مجاني داخل الدار البيضاء.</p>
+          </div>
+        </div>
+        <div class="delivery__card">
+          <h3>مركز التوزيع</h3>
+          <p>نستخدم شبكة شركاء موثوقة مع نقاط توزيع في الدار البيضاء، الرباط، ومراكش.</p>
+          <div class="stats">
+            <div>
+              <strong>+60</strong>
+              <span>مندوب توصيل</span>
+            </div>
+            <div>
+              <strong>98%</strong>
+              <span>تسليم في الموعد</span>
+            </div>
+            <div>
+              <strong>+30</strong>
+              <span>مدينة مغطاة</span>
+            </div>
+          </div>
+          <div class="mini-map">
+            <div class="pulse"></div>
+            <img src="https://placehold.co/420x260/0f172a/ffffff?text=Morocco+Delivery+Zones" alt="خريطة التوصيل">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="section-heading">
+          <h2>عملاؤنا يحكون تجربتهم</h2>
+          <p>آراء حقيقية لعملاء وثقوا في خدمة الدفع عند الاستلام الخاصة بنا.</p>
+        </div>
+        <div class="testimonials__carousel" id="testimonialCarousel" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="section-heading">
+          <h2>الأسئلة المتكررة</h2>
+          <p>كل ما تحتاج معرفته قبل إكمال الطلب.</p>
+        </div>
+        <div class="accordion" id="faqAccordion"></div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact__grid">
+        <div>
+          <h2>هل تحتاج مساعدة فورية؟</h2>
+          <p>فريقنا متواجد 24/7 للإجابة عن كل استفساراتك قبل أو بعد الشراء.</p>
+          <div class="contact__actions">
+            <a class="btn btn--primary" href="https://wa.me/212612345678" target="_blank" rel="noopener">
+              <i data-lucide="message-circle"></i>
+              تواصل عبر واتساب
+            </a>
+            <a class="btn btn--ghost" href="tel:0612345678">
+              <i data-lucide="phone"></i>
+              اتصل بنا الآن
+            </a>
+          </div>
+          <ul class="contact__list">
+            <li><i data-lucide="clock"></i> من الاثنين إلى السبت • 09:00 - 22:00</li>
+            <li><i data-lucide="mail"></i> support@codstore.ma</li>
+            <li><i data-lucide="map"></i> سيدي معروف، الدار البيضاء</li>
+          </ul>
+        </div>
+        <form class="contact__form" id="contactForm" novalidate>
+          <h3>أرسل رسالة</h3>
+          <label for="contactName">الإسم الكامل</label>
+          <input type="text" id="contactName" name="name" placeholder="مثال: آمنة بن يوسف" required>
+          <label for="contactPhone">رقم الهاتف</label>
+          <input type="tel" id="contactPhone" name="phone" placeholder="06XXXXXXXX" required>
+          <label for="contactMessage">الرسالة</label>
+          <textarea id="contactMessage" name="message" rows="4" placeholder="اكتب استفسارك هنا" required></textarea>
+          <button type="submit" class="btn btn--primary">إرسال</button>
+          <p class="form-status" id="contactStatus" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <span class="logo">المتجر الذكي</span>
+          <p>حل متكامل لإدارة طلبات الدفع عند الاستلام مع لوحة تحكم ذكية وتقارير مفصلة.</p>
+        </div>
+        <div>
+          <h4>روابط مهمة</h4>
+          <ul>
+            <li><a href="#products">منتجاتنا</a></li>
+            <li><a href="#delivery">سياسة التوصيل</a></li>
+            <li><a href="#faq">الأسئلة الشائعة</a></li>
+            <li><a href="#contact">اتصل بنا</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>سياسات</h4>
+          <ul>
+            <li><a href="#" data-policy="privacy">سياسة الخصوصية</a></li>
+            <li><a href="#" data-policy="refund">سياسة الاسترجاع</a></li>
+            <li><a href="#" data-policy="terms">الشروط والأحكام</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>تابعنا</h4>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a>
+            <a href="#" aria-label="TikTok"><i data-lucide="tiktok"></i></a>
+          </div>
+        </div>
+      </div>
+      <p class="footer__copy">© <span id="year"></span> المتجر الذكي. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+  <aside class="order-drawer" id="orderDrawer" aria-hidden="true">
+    <div class="order-drawer__header">
+      <h3>ملخص الطلب</h3>
+      <button class="icon-btn" id="closeDrawer" aria-label="إغلاق">
+        <i data-lucide="x"></i>
+      </button>
+    </div>
+    <div class="order-drawer__content" id="orderContent"></div>
+    <form class="order-drawer__form" id="orderForm" novalidate>
+      <div class="form-field">
+        <label for="orderName">الإسم الكامل</label>
+        <input type="text" id="orderName" required placeholder="مثال: آمنة بن يوسف">
+      </div>
+      <div class="form-field">
+        <label for="orderPhone">رقم الهاتف</label>
+        <input type="tel" id="orderPhone" required placeholder="06XXXXXXXX">
+      </div>
+      <div class="form-field">
+        <label for="orderCity">المدينة</label>
+        <input type="text" id="orderCity" required placeholder="مثال: الدار البيضاء">
+      </div>
+      <div class="form-field">
+        <label for="orderNotes">ملاحظات</label>
+        <textarea id="orderNotes" rows="3" placeholder="أي معلومات إضافية للموزع"></textarea>
+      </div>
+      <button type="submit" class="btn btn--primary">تأكيد الطلب</button>
+      <p class="form-status" id="orderStatus" role="status" aria-live="polite"></p>
+    </form>
+  </aside>
+
+  <div class="overlay" id="overlay" hidden></div>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" hidden>
+    <div class="modal__dialog">
+      <button class="icon-btn modal__close" id="closeModal" aria-label="إغلاق">
+        <i data-lucide="x"></i>
+      </button>
+      <div class="modal__content" id="modalContent"></div>
+    </div>
+  </div>
+
+  <div class="floating-whatsapp">
+    <a href="https://wa.me/212612345678" target="_blank" rel="noopener">
+      <i data-lucide="message-circle"></i>
+      تحدث معنا الآن
+    </a>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

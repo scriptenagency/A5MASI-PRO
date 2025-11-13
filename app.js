@@ -139,7 +139,11 @@ function playPing() {
 function addBubble(content, type = 'bot', extraClass = '') {
   const bubble = document.createElement('div');
   bubble.className = `chat-bubble ${type} ${extraClass}`.trim();
-  bubble.innerHTML = content;
+  if (type === 'user') {
+    bubble.textContent = content;
+  } else {
+    bubble.innerHTML = content;
+  }
   chatLog.appendChild(bubble);
   chatLog.scrollTop = chatLog.scrollHeight;
   if (type === 'bot') playPing();
